@@ -4,11 +4,11 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const UsingSSR = ({ serverData }) => {
+const DondeEstamos = ({ serverData }) => {
   return (
     <Layout>
       <h1>
-        This page is <b>rendered server-side</b>
+        Esta página te muestra <b>perritos aleatorios</b>
       </h1>
       <p>
         This page is rendered server side every time the page is requested.
@@ -34,7 +34,7 @@ const UsingSSR = ({ serverData }) => {
 
 export const Head = () => <Seo title="Using SSR" />
 
-export default UsingSSR
+export default DondeEstamos
 
 export async function getServerData() {
   try {

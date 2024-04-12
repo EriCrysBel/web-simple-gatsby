@@ -1,17 +1,17 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
- */
 
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import {Link} from  'gatsby'
+// import Header from "./header"
+import { container, 
+  heading, 
+  navLinks, 
+  navLinkItem,
+  navLinkText
+} from '../components/layout.css'
+import { StaticImage } from 'gatsby-plugin-image'
 
-import Header from "./header"
-import "./layout.css"
-
-const Layout = ({ children }) => {
+const Layout = ({ pageTitle, children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -23,28 +23,26 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: `var(--size-content)`,
-          padding: `var(--size-gutter)`,
-        }}
-      >
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `var(--space-5)`,
-            fontSize: `var(--font-sm)`,
-          }}
-        >
-          © {new Date().getFullYear()} &middot; Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
-    </>
+    <div className={container}>
+    <header>
+        <h1>{data.site.siteMetadata.title}</h1>
+        <h2>{data.site.siteMetadata.description}</h2>
+    </header>
+    <StaticImage src='../images/rexy.jpg' alt='logotipo' width={100} height={100}/>
+    <nav>
+    <ul className={navLinks}>
+        <li className={navLinkItem}><Link className={navLinkText} to="/">Home</Link></li>
+        <li className={navLinkItem}><Link className={navLinkText} to="/about">Sobre Mi</Link></li>
+        <li className={navLinkItem}><Link className={navLinkText} to="/donde-estamos">Dónde estamos</Link></li>
+    </ul>
+    </nav>
+    <main>
+    <h1 className={heading}>{pageTitle}</h1>
+    {children}
+    <footer><p className='footer'>&copy; Erika {new Date().getFullYear()} <a className={navLinkText} href='https://github.com/ericrysbel'>Github</a></p></footer>
+    
+    </main>
+</div>
   )
 }
 
