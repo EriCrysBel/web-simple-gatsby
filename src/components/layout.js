@@ -23,12 +23,12 @@ const Layout = ({ pageTitle, children }) => {
   `)
 
   return (
-    <div className={container}>
+    <div className="container">
     <header>
         <h1>{data.site.siteMetadata.title}</h1>
         <h2>{data.site.siteMetadata.description}</h2>
     </header>
-    <StaticImage src='../images/rexy.jpg' alt='logotipo' width={100} height={100}/>
+    <StaticImage src='../images/rexybanner.png' alt='logotipo' />
     <nav>
     <ul className={navLinks}>
         <li className={navLinkItem}><Link className={navLinkText} to="/">Home</Link></li>
