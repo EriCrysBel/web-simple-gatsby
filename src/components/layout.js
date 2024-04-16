@@ -27,17 +27,17 @@ const Layout = ({ pageTitle, children }) => {
     <header>
         <h1>{data.site.siteMetadata.title}</h1>
         <h2>{data.site.siteMetadata.description}</h2>
-    </header>
     <StaticImage src='../images/rexybanner.png' alt='logotipo' />
+    </header>
     <nav>
-    <ul className={navLinks}>
-        <li className={navLinkItem}><Link className={navLinkText} to="/">Home</Link></li>
-        <li className={navLinkItem}><Link className={navLinkText} to="/about">Sobre Mi</Link></li>
-        <li className={navLinkItem}><Link className={navLinkText} to="/donde-estamos">Dónde estamos</Link></li>
+    <ul className="nav-links">
+        <li className="nav-link-item"><Link className="nav-link-text" to="/">Home</Link></li>
+        <li className="nav-link-item"><Link className="nav-link-text" to="/about">Sobre Mi</Link></li>
+        <li className="nav-link-item"><Link className="nav-link-text" to="/donde-estamos">Dónde estamos</Link></li>
     </ul>
     </nav>
     <main>
-    <h1 className={heading}>{pageTitle}</h1>
+    <h1 className="heading">{pageTitle}</h1>
     {children}
     <footer><p className='footer'>&copy; Erika {new Date().getFullYear()} <a className={navLinkText} href='https://github.com/ericrysbel'>Github</a></p></footer>
     

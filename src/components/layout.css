@@ -225,7 +225,7 @@ pre tt:after {
 
 .container {
   margin: auto;
-  max-width: 500px;
+  max-width: 1000px;
   font-family: sans-serif;
 }
 .heading {
@@ -234,7 +234,8 @@ pre tt:after {
 .nav-links {
   display: flex;
   list-style: none;
-  padding-left: 0;
+  padding:10px;
+  justify-content: space-between;
 }
 .nav-link-item {
   padding-right: 2rem;
@@ -243,11 +244,10 @@ pre tt:after {
   color: black;
 }
 
-.container{
+header{
   text-align: center;
-  justify-content: center;
-  align-items: center;
-  justify-self: center;
   align-self: center;
+  justify-content: center;
+  margin-top: 3em;
 
 }
